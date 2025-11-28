@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(0, 0, 0, 0.87);
+  background-image: url('D:\React JS\React Code\basic-react-app\React-App\react-state-class2\src\assets\simpleback.jpg');;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
