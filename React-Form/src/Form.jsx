@@ -2,20 +2,50 @@ import { useState } from "react"
 
 export default function Form(){
 
-    let [fullName, setFullName] = useState("");
+    let[formData,setFormData]=useState({
+        username:"",
+        Passowrd:""
+    });   
 
-    let handleChange = (event) => {
-        setFullName(event.target.value);
+    let handleInputChange = (event) => {
+        setFormData((currDate)=>{
+            return{
+                ...currDate,
+                [event.target.name]: event.target.value
+            };
+        });
     };
+
+    let handleSubmit = (event)=>{
+        event.preventDefault();
+        console.log(formData);
+        setFormData({
+            username:"",
+            Passowrd:""
+        });
+    }
 
     return(
         <form>
-            <label htmlFor="username">Full Name</label>
-            <input placeholder="enter full name" type="text" value={fullName}
-            onChange={handleChange}
+            <label htmlFor="username">User Name</label>
+            <input placeholder="enter username"
+            type="text" 
+            value={FormData.username}
+            onChange={handleInputChange}
+            name="username"
             id="username"
             />
-            <button>Submit</button>
+            <br></br> <br></br>
+            <label htmlFor="Passowrd">Passowrd</label>
+            <input placeholder="enter Password"
+            type="Passowrd" 
+            value={FormData.Passowrd}
+            onChange={handleInputChange}
+            name="Passowrd"
+            id="Passowrd"
+            />
+            <br></br> <br></br> 
+            <button onClick={handleSubmit}>Submit</button>
         </form>
     )
 }
